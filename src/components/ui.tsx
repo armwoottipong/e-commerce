@@ -109,7 +109,7 @@ export function Select(props: ComponentProps<"select"> & { label: string }) {
 
 export function StatusPill({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex rounded-full border border-ink/20 bg-paper px-2.5 py-1 font-mono text-[10px] uppercase text-ink/80">
+    <span className="inline-flex items-center justify-center rounded-full border border-ink/20 bg-paper px-2.5 py-1 text-center font-mono text-[10px] uppercase leading-none text-ink/80">
       {children}
     </span>
   );
