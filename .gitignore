@@ -1,0 +1,13 @@
+.env
+.next
+node_modules
+dist
+coverage
+*.log
+uploads
+.agents
+.codex-plugins
+src/generated
+prisma/generated
+tsconfig.tsbuildinfo
+skills-lock.json

@@ -1,0 +1,10 @@
+.next
+node_modules
+dist
+coverage
+uploads
+*.log
+.env
+.agents
+.codex-plugins
+tsconfig.tsbuildinfo

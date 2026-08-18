@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: "Aptos", "Leelawadee UI", "Noto Sans Thai", Arial, sans-serif;
+  --font-display:
+    "Bodoni 72", "Didot", "Times New Roman", "Th Sarabun New", serif;
+  --font-mono: "Aptos Mono", "IBM Plex Mono", ui-monospace, monospace;
+  --ink: #161815;
+  --paper: #f3f4f0;
+  --surface: #fbfcf9;
+  --line: rgba(22, 24, 21, 0.13);
+  --forest: #315843;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  letter-spacing: 0;
+}
+
+a,
+button,
+input,
+select,
+textarea {
+  outline-color: var(--forest);
+}
+
+img {
+  max-width: 100%;
+}
+
+::selection {
+  background: #315843;
+  color: #fff;
+}
+
+@layer base {
+  a,
+  button,
+  input,
+  select,
+  textarea {
+    transition:
+      border-color 160ms ease,
+      background-color 160ms ease,
+      color 160ms ease,
+      opacity 160ms ease,
+      transform 160ms ease;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: rgba(22, 24, 21, 0.38);
+  }
+}
+
+@layer components {
+  .page-shell {
+    @apply mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:py-14;
+  }
+
+  .eyebrow {
+    @apply font-mono text-[11px] uppercase text-clay;
+  }
+
+  .surface {
+    @apply border border-ink/10 bg-white;
+  }
+
+  .row-surface {
+    @apply border-b border-ink/10 py-5 first:border-t;
+  }
+}
+
+.market-rail {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.cart-fly {
+  position: absolute;
+  right: 1.35rem;
+  bottom: 1.35rem;
+  z-index: 2;
+  height: 0.7rem;
+  width: 0.7rem;
+  border-radius: 999px;
+  background: #315843;
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.72);
+  animation: cart-fly 760ms cubic-bezier(0.2, 0.78, 0.24, 1) forwards;
+  pointer-events: none;
+}
+
+.cart-bump {
+  animation: cart-bump 480ms cubic-bezier(0.2, 0.78, 0.24, 1);
+}
+
+@keyframes cart-fly {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.65);
+  }
+  22% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(1.7rem, -3rem) scale(0.2);
+  }
+}
+
+@keyframes cart-bump {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  38% {
+    transform: scale(1.2) rotate(-7deg);
+  }
+  68% {
+    transform: scale(0.96) rotate(3deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
