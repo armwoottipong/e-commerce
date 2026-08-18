@@ -117,7 +117,7 @@ export function StatusPill({
   return (
     <span
       className={clsx(
-        "inline-flex items-center justify-center rounded-full border border-ink/20 bg-paper px-2.5 py-1 text-center font-mono text-[10px] uppercase leading-none text-ink/80",
+        "inline-flex h-[18px] min-w-[38px] items-center justify-center whitespace-nowrap rounded-full border border-ink/20 bg-paper px-2 text-center text-[9px] font-medium uppercase leading-none text-ink/75",
         className,
       )}
     >
