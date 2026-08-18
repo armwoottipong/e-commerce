@@ -108,7 +108,9 @@ export default async function SellerDashboardPage() {
                 <p className="hidden self-center text-xs text-ink/60 sm:block">
                   {order.createdAt.toLocaleDateString("th-TH")}
                 </p>
-                <StatusPill>{order.status}</StatusPill>
+                <StatusPill className="self-center justify-self-end">
+                  {order.status}
+                </StatusPill>
               </div>
             ))}
           </div>
